@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 Colores</title>
+</head>
+<body>
+
+    <div id="blueDiv" style="width: 200px; height: 200px; background-color: blue;"></div>
+    <div id="redDiv" style="width: 200px; height: 200px; background-color: red;"></div>
+    <div id="greenDiv" style="width: 200px; height: 200px; background-color: green;"></div>
+    <div id="yellowDiv" style="width: 200px; height: 200px; background-color: yellow;"></div>
+
+
+    <div id="key" style="width: 200px; height: 200px; background-color: white; border: 1px solid black; margin-top: 20px;"></div>
+
+    <script>
+
+        document.getElementById("blueDiv").addEventListener("click", function() {
+            this.style.backgroundColor = "black";
+        });
+        document.getElementById("redDiv").addEventListener("click", function() {
+            this.style.backgroundColor = "black";
+        });
+        document.getElementById("greenDiv").addEventListener("click", function() {
+            this.style.backgroundColor = "black";
+        });
+        document.getElementById("yellowDiv").addEventListener("click", function() {
+            this.style.backgroundColor = "black";
+        });
+
+ 
+        let colorSeleccionado = "";
+
+    
+        document.addEventListener("keydown", function(event) {
+            const keyDiv = document.getElementById("key");
+            if (event.key === 'a') {
+                colorSeleccionado = "pink";  
+                keyDiv.style.backgroundColor = colorSeleccionado;
+            } else if (event.key === 's') {
+                colorSeleccionado = "orange";  
+                keyDiv.style.backgroundColor = colorSeleccionado;
+            } else if (event.key === 'd') {
+                colorSeleccionado = "lightblue";  
+                keyDiv.style.backgroundColor = colorSeleccionado;
+            } else if (event.key === 'q') {
+                crearNuevoDiv("purple");  
+            } else if (event.key === 'w') {
+                crearNuevoDiv("gray");  
+            } else if (event.key === 'e') {
+                crearNuevoDiv("brown");  
+            }
+        });
+
+        function crearNuevoDiv(color) {
+            const nuevoDiv = document.createElement("div");
+            nuevoDiv.style.width = "200px";
+            nuevoDiv.style.height = "200px";
+            nuevoDiv.style.backgroundColor = color;
+            nuevoDiv.style.border = "1px solid black";
+            nuevoDiv.style.marginTop = "20px";
+            document.body.appendChild(nuevoDiv);
+        }
+    </script>
+</body>
+</html>
